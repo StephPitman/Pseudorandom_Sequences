@@ -1,0 +1,16 @@
+
+mpi_init(argv[],agrc[])
+n= argv[1]  //len of seq
+
+mpi_rank(id)
+mpi_size(p)
+count=0
+unsigned long stop = 2^n
+for (i=0; i<(stop); i+=p):
+	convert i to seq of 1 and -1 of len n                       //1 person - Evgeny
+	if (test seq for pseudorandomnes==1)			    //2-3 people - Stephen, Franco, Evgeny
+		count += 1
+		print(seq)		//do 1 print at time or write file + merge in the end   - Stephanie
+mpi_reduce(count,1, mpi_int,0, comm_world)
+if (id==0){print count}
+
